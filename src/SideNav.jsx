@@ -1,7 +1,7 @@
  import React from "react";
 import { RiCloseLine } from "react-icons/ri";
 
-function SideNav({ myNav, onClose }) {
+function Sidenav({ myNav, onClose }) {
   return (
     <>
       {/* Overlay */}
@@ -43,4 +43,4 @@ function SideNav({ myNav, onClose }) {
   );
 }
 
-export default SideNav
+export default Sidenav
