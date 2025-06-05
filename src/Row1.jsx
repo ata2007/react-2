@@ -11,7 +11,7 @@ function Row1() {
             Welcome to <span className="text-blue-700">EUVOLA</span>
           </h2>
           <p className="text-lg md:text-2xl text-blue-800 mb-4 font-medium">
-            <span className="font-bold text-blue-700">Atemaga Armstrong.</span>
+            <span className="font-bold text-blue-700">Atemaga Armstrong</span>
           </p>
           <p className="text-lg md:text-2xl text-blue-800 mb-8 font-medium">
             Professional UI/UX Designer providing awesome, cool design stuff for clients.<br className="hidden md:block" />
