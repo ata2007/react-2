@@ -12,7 +12,7 @@ import Row7 from "./Row7"
 import Row8 from "./Row8"
 import Row9 from  "./Row9"
 import Row10 from "./Row10"
-import Sidenav from './Sidenav';
+
 
 
 
@@ -25,7 +25,6 @@ import Sidenav from './Sidenav';
 createRoot(document.getElementById('root')).render(
    <StrictMode>
        <Header/>
-       <Sidenav/>
        <Row1/>
        <Row2/>
        <Row3/>
