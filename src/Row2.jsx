@@ -3,7 +3,7 @@ import { FaUserTie } from "react-icons/fa";
 
 function Row2() {
   return (
-    <section className="w-full bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200 py-16">
+    <section className="w-full bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200 py-16" id="about">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 px-6">
         {/* Image/Icon */}
         <div className="flex-1 flex justify-center">

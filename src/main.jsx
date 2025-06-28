@@ -1,5 +1,6 @@
 import { StrictMode } from "react"
 import { createRoot } from "react-dom/client"
+import { BrowserRouter,Routes,Route } from "react-router-dom"
 import './style.css'
 import Header from "./Header"
 import Row1 from "./Row1"
@@ -24,8 +25,10 @@ import Row10 from "./Row10"
 
 createRoot(document.getElementById('root')).render(
    <StrictMode>
-       <Header/>
-       <Row1/>
+
+   
+      <Header/>
+        <Row1/>
        <Row2/>
        <Row3/>
        <Row4/>
@@ -36,6 +39,11 @@ createRoot(document.getElementById('root')).render(
         <Row9/>
        <Row10/>
        
+      
+   
+  
+
+   
 
 
    </StrictMode>

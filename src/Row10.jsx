@@ -3,7 +3,7 @@ import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
 
 function Row10() {
   return (
-    <section className="w-full bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200 py-16">
+    <section className="w-full bg-gradient-to-br from-blue-50 via-blue-100 to-blue-200 py-16" id="contact">
       <div className="max-w-4xl mx-auto px-6">
         <h3 className="text-3xl md:text-5xl font-extrabold text-blue-900 mb-12 text-center drop-shadow">
           Contact <span className="text-blue-700">Me</span>

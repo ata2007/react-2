@@ -3,9 +3,10 @@ import { FaArrowRight } from "react-icons/fa";
 
 function Row1() {
   return (
-    <section className="w-full bg-gradient-to-br from-blue-100 via-blue-200 to-blue-300 py-16">
+    <section className="w-full bg-gradient-to-br from-blue-100 via-blue-200 to-blue-300 py-16" id="home" >
+      <a href="home"></a>
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12 px-6">
-        {/* Text Content */}
+       
         <div className="flex-1 text-center md:text-left bg-white/70 backdrop-blur-md p-10 rounded-3xl shadow-2xl border border-blue-200">
           <h2 className="text-4xl md:text-6xl font-extrabold text-blue-900 mb-6 drop-shadow">
             Welcome to <span className="text-blue-700">EUVOLA</span>
@@ -21,17 +22,17 @@ function Row1() {
             Hire Me <FaArrowRight className="text-xl" />
           </button>
         </div>
-        {/* Image or Illustration */}
-        <div className="flex-1 flex justify-center">
-          <img
-            src="https://via.placeholder.com/350x300"
-            alt="Hero"
-            className="w-full max-w-xs md:max-w-md rounded-2xl shadow-2xl border-4 border-white animate-fadeIn"
-            style={{ animation: "fadeIn 1.2s" }}
-          />
-        </div>
+        
+        <div className="flex-1 flex justify-center h-[450px] bg-contain">
+  <img
+    src="/img.JPG"
+    alt="Atemaga Armstrong"
+    className="w-full max-w-xs md:max-w-md rounded-2xl shadow-2xl border-4 border-white animate-fadeIn object-cover h-full"
+    style={{ animation: "fadeIn 1.2s" }}
+  />
+  </div>
       </div>
-      {/* Custom animation for fadeIn */}
+      
       <style>
         {`
           @keyframes fadeIn {
