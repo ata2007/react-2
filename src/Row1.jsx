@@ -25,7 +25,7 @@ function Row1() {
         
         <div className="flex-1 flex justify-center h-[450px] bg-contain">
   <img
-    src="/img.JPG"
+    src=""
     alt="Atemaga Armstrong"
     className="w-full max-w-xs md:max-w-md rounded-2xl shadow-2xl border-4 border-white animate-fadeIn object-cover h-full"
     style={{ animation: "fadeIn 1.2s" }}
