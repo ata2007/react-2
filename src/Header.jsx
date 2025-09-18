@@ -1,82 +1,115 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 import { RiMenu3Line } from "react-icons/ri";
 import SideNav from './SideNav';
-import { GiAbstract027 } from "react-icons/gi";
 
 function Header() {
-  let [myNav, setMyNav] = useState(false);
+  const [myNav, setMyNav] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   function showNav() {
     setMyNav(!myNav);
   }
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 30);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-blue-900 via-blue-700 to-blue-500 shadow-2xl border-b-4 border-blue-300/40 backdrop-blur-lg">
-      {/* Neon border and animated background */}
-      <div className="absolute inset-0 pointer-events-none z-0">
-        <div className="w-full h-full bg-gradient-to-r from-blue-900/70 via-blue-700/60 to-blue-500/70 blur-xl animate-pulse"></div>
-        <div className="absolute inset-0 border-t-4 border-b-4 border-blue-400/40 rounded-b-3xl animate-borderGlow"></div>
+    <header className={`fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-[#013237] via-[#4ca771] to-[#013237] shadow-lg border-b-2 border-[#c0e6ba] backdrop-blur-md transition-all duration-300 ${isScrolled ? 'py-2' : 'py-3'} animate-fadeSlideDown`}>
+      
+      {/* Background pattern */}
+      <div className="absolute inset-0 pointer-events-none z-0 opacity-10">
+        <div className="w-full h-full bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgdmlld0JveD0iMCAwIDYwIDYwIj48ZyBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMC41Ij48cGF0aCBkPSJNIDAgMCBMIDYwIDYwIE0gNjAgMCBMIDAgNjAiLz48L2c+PC9zdmc+')]"></div>
       </div>
-      <div className="relative max-w-7xl mx-auto flex items-center justify-between px-6 py-4 z-10">
-        <h1 className="flex items-center gap-4 text-3xl md:text-5xl font-extrabold tracking-widest drop-shadow-xl animate-pulse">
-          <span className="bg-gradient-to-tr from-blue-300 via-blue-500 to-blue-900 p-3 rounded-full shadow-2xl border-4 border-blue-200 animate-spin-slow">
-            <GiAbstract027 className="text-4xl md:text-5xl text-blue-100" />
-          </span>
-          <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-200 via-white to-blue-400 animate-gradientText">
-            EUVOLA
-          </span>
-        </h1>
-        <nav className="hidden md:flex gap-8 font-semibold text-lg">
+      
+      <div className="relative max-w-7xl mx-auto flex items-center justify-between px-4 md:px-6 z-10">
+        {/* Logo */}
+        <div className="flex items-center gap-3">
+          <div className={`transition-all duration-300 ${isScrolled ? 'scale-75' : 'scale-90'}`}>
+            <div className="relative p-2 rounded-full cursor-pointer group">
+              {/* Glowing ring */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-[#c0e6ba] to-[#4ca771] blur-md opacity-70 group-hover:opacity-100 transition-all duration-500"></div>
+              
+              <div className="relative bg-gradient-to-br from-[#eaf9e7] to-[#c0e6ba] px-4 py-2 rounded-full shadow-md border border-[#eaf9e7]">
+                <span className="text-lg md:text-xl font-extrabold text-[#013237] tracking-wide animate-textGlow">
+                  ATA....PORTFOLIO
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        {/* Navigation */}
+        <nav className="hidden md:flex gap-6 font-medium text-base">
           {[
             { href: "#home", label: "HOME" },
             { href: "#about", label: "ABOUT" },
             { href: "#service", label: "SERVICE" },
-            { href: "#portfolio", label: "PORTFOLIO" },
+            { href: "#portfolio", label: "PORTFOLIO", special: true },
             { href: "#project", label: "PROJECT" },
             { href: "#blog", label: "BLOG" },
             { href: "#contact", label: "CONTACT" },
-          ].map((item, idx) => (
+          ].map((item) => (
             <a
               key={item.href}
               href={item.href}
-              className="relative group px-2"
+              className={`relative group px-2 py-1 ${item.special ? 'special-portfolio' : ''}`}
             >
-              <span className="cursor-pointer text-white hover:text-cyan-300 transition duration-200 tracking-wider drop-shadow-lg">
+              <span className={`cursor-pointer transition-colors duration-300 tracking-wide z-10 relative ${item.special ? 'textGlowGradient' : 'text-[#eaf9e7] hover:text-white'}`}>
                 {item.label}
               </span>
-              {/* Neon underline */}
-              <span className="absolute left-0 -bottom-1 w-0 h-1 bg-gradient-to-r from-cyan-400 via-blue-400 to-blue-700 rounded-full group-hover:w-full transition-all duration-300"></span>
-              {/* Glow on hover */}
-              <span className="absolute inset-0 opacity-0 group-hover:opacity-60 rounded-lg blur-md bg-cyan-400/30 transition duration-300"></span>
+              {/* Underline */}
+              <span className={`absolute left-0 -bottom-1 w-0 h-0.5 rounded-full transition-all duration-300 z-20 ${item.special ? 'bg-gradient-to-r from-[#c0e6ba] via-[#4ca771] to-[#c0e6ba] group-hover:w-full' : 'bg-gradient-to-r from-[#eaf9e7] to-[#c0e6ba] group-hover:w-full'}`}></span>
+              <span className="absolute inset-0 rounded-md bg-[#4ca771] opacity-0 group-hover:opacity-20 transition-opacity duration-300 -z-10"></span>
             </a>
           ))}
         </nav>
+        
+        {/* Mobile menu */}
         <div className="md:hidden">
-          <button onClick={showNav} className="text-white text-4xl p-2 rounded-full bg-blue-700/70 hover:bg-blue-900/90 shadow-2xl border-2 border-cyan-200 animate-bounce transition">
+          <button 
+            onClick={showNav} 
+            className="text-[#eaf9e7] text-2xl p-1.5 rounded-md bg-[#4ca771] hover:bg-[#013237] shadow-sm border border-[#c0e6ba] transition-colors duration-300"
+          >
             <RiMenu3Line />
           </button>
         </div>
       </div>
+      
       <SideNav myNav={myNav} onClose={() => setMyNav(false)} />
+      
       <style>
         {`
-          .animate-spin-slow {
-            animation: spin 3s linear infinite;
+          @keyframes fadeSlideDown {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
           }
-          @keyframes borderGlow {
-            0%, 100% { box-shadow: 0 0 24px 4px #38bdf8, 0 0 48px 8px #2563eb44; }
-            50% { box-shadow: 0 0 48px 8px #38bdf8, 0 0 96px 16px #2563eb88; }
+          .animate-fadeSlideDown {
+            animation: fadeSlideDown 0.5s ease-out forwards;
           }
-          .animate-borderGlow {
-            animation: borderGlow 2.5s ease-in-out infinite;
+          @keyframes textGlow {
+            0%, 100% { text-shadow: 0 0 5px #4ca771, 0 0 10px #c0e6ba; }
+            50% { text-shadow: 0 0 15px #4ca771, 0 0 25px #c0e6ba; }
           }
-          @keyframes gradientText {
-            0%,100% { filter: hue-rotate(0deg);}
-            50% { filter: hue-rotate(40deg);}
+          .animate-textGlow {
+            animation: textGlow 2.5s ease-in-out infinite;
           }
-          .animate-gradientText {
-            animation: gradientText 3s linear infinite;
+          .textGlowGradient {
+            background: linear-gradient(90deg, #eaf9e7, #c0e6ba, #4ca771);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 4s ease infinite, textGlow 3s ease-in-out infinite;
+          }
+          @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
           }
         `}
       </style>
