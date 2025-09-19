@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import { FaArrowRight, FaExternalLinkAlt } from "react-icons/fa";
 import { motion, useInView } from "framer-motion";
+import { link } from "framer-motion/client";
 
 const projects = [
   {
@@ -15,8 +16,9 @@ const projects = [
     link: "https://greg-investment.vercel.app/",
   },
   {
-    title: "Nexus App",
+    title: "InvestX",
     desc: "A creative mobile app design for productivity and collaboration.",
+    link:"https://investx-nu.vercel.app/",
   },
   {
     title: "Aura Commerce",
