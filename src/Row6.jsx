@@ -11,14 +11,13 @@ const projects = [
     featured: true,
   },
   {
-    title: "Greg Invest",
+    title: " InvestX",
     desc: "A modern investment platform built for performance and user experience.",
-    link: "https://greg-investment.vercel.app/",
+    link: "https://investx-nu.vercel.app/",
   },
   {
-    title: "InvestX",
+    title: "Euvola",
     desc: "A creative mobile app design for productivity and collaboration.",
-    link:"https://investx-nu.vercel.app/",
   },
   {
     title: "Aura Commerce",
