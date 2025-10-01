@@ -127,7 +127,7 @@ function Row8() {
       </div>
 
       {/* Custom Animations */}
-      <style jsx>{`
+      <style >{`
         @keyframes infinite-scroll {
           0% {
             transform: translateX(0);

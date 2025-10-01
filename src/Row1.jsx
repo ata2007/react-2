@@ -1,5 +1,6 @@
 import React from "react";
 import { FaArrowRight } from "react-icons/fa";
+import { TypeAnimation } from "react-type-animation"; // Add this import
 
 function Row1() {
   return (
@@ -10,13 +11,28 @@ function Row1() {
         {/* Text Content */}
         <div className="flex-1 text-center md:text-left bg-white/80 backdrop-blur-md p-6 md:p-10 rounded-3xl shadow-xl border-2 border-[#eaf9e7]">
           <h2 className="text-3xl md:text-5xl font-extrabold text-[#013237] mb-6 drop-shadow">
-            Welcome to <span className="text-[#4ca771]">ATA</span>
+            <TypeAnimation
+              sequence={[
+                "Welcome to ATA",
+                1200,
+                "Welcome to Armstrong",
+                1200,
+                "Welcome to Portfolio",
+                1200,
+                "Welcome to ATA",
+                1200,
+              ]}
+              wrapper="span"
+              speed={50}
+              repeat={Infinity}
+              className="text-[#4ca771]"
+            />
           </h2>
           <p className="text-lg md:text-xl text-[#013237] mb-4 font-medium">
             <span className="font-bold text-[#4ca771]">Atemaga Armstrong</span>
           </p>
           <p className="text-base md:text-xl text-[#013237] mb-8 font-medium">
-            Professional UI/UX Designer providing awesome, cool design stuff for clients.<br className="hidden md:block" />
+            Professional UI/UX Designer and Web Developer providing awesome, cool design stuff for clients.<br className="hidden md:block" />
             My vision is to satisfy my clients with exceptional design solutions.
           </p>
           <button className="inline-flex items-center gap-3 bg-gradient-to-r from-[#4ca771] to-[#013237] hover:from-[#013237] hover:to-[#4ca771] transition-all duration-300 px-6 py-3 md:px-8 md:py-4 rounded-full text-white text-base md:text-lg font-bold shadow-lg hover:shadow-xl transform hover:-translate-y-1">

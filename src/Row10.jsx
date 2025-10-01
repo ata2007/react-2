@@ -572,7 +572,7 @@ function Row10() {
       </div>
 
       {/* Styles */}
-      <style jsx>{`
+      <style >{`
         /* floating */
         @keyframes float1 {
           0%, 100% { transform: translateY(0); }

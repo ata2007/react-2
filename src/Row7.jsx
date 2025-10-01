@@ -213,7 +213,7 @@ function Row7() {
         </div>
       </div>
 
-      <style jsx>{`
+      <style >{`
         .animate-pulse-slow {
           animation: pulse 10s ease-in-out infinite;
         }

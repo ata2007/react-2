@@ -1,6 +1,5 @@
 import React from "react";
-import { FaUserTie } from "react-icons/fa";
-import { FaArrowRight } from "react-icons/fa";
+import { FaUserTie, FaArrowRight } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 function Row2() {
@@ -10,35 +9,132 @@ function Row2() {
       id="about"
     >
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-12 px-6">
-        {/* Icon with Framer Motion */}
+        {/* Enhanced Animated Cube */}
         <motion.div
-          className="flex-1 flex justify-center"
+          className="flex-1 flex justify-center perspective-[1000px]"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
           <motion.div
-            className="relative w-40 h-40 md:w-56 md:h-56 rounded-full bg-gradient-to-br from-[#eaf9e7] to-[#c0e6ba] flex items-center justify-center shadow-xl border-4 border-[#eaf9e7]"
-            animate={{ y: [0, -15, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+            className="relative w-48 h-48 md:w-64 md:h-64"
+            animate={{
+              y: [0, -20, 0],
+              rotateY: [0, 360],
+              rotateX: [0, 360],
+            }}
+            transition={{
+              y: { 
+                duration: 4, 
+                repeat: Infinity, 
+                ease: "easeInOut",
+                repeatType: "reverse"
+              },
+              rotateY: { 
+                duration: 12, 
+                repeat: Infinity, 
+                ease: "linear" 
+              },
+              rotateX: { 
+                duration: 18, 
+                repeat: Infinity, 
+                ease: "linear" 
+              },
+            }}
+            style={{ transformStyle: "preserve-3d" }}
           >
-            <FaUserTie className="text-[#013237] text-5xl md:text-7xl" />
+            {/* Cube Container with enhanced styling */}
+            <div className="relative w-full h-full" style={{ transformStyle: "preserve-3d" }}>
+              {/* Front Face */}
+              <motion.div
+                className="absolute w-full h-full flex flex-col items-center justify-center rounded-xl shadow-2xl border-2 border-white/40 bg-gradient-to-br from-[#4ca771] to-[#013237] text-white"
+                style={{ transform: 'translateZ(96px)' }}
+                whileHover={{ scale: 1.05 }}
+              >
+                <FaUserTie className="text-5xl md:text-7xl mb-2" />
+                <span className="text-xs md:text-sm font-semibold opacity-90">DESIGN</span>
+              </motion.div>
 
-            {/* Decorative elements */}
-            <motion.div
-              className="absolute -top-2 -right-2 w-8 h-8 bg-[#4ca771] rounded-full opacity-80"
-              animate={{ scale: [1, 1.2, 1], opacity: [0.6, 0.9, 0.6] }}
-              transition={{ duration: 3, repeat: Infinity }}
-            />
-            <motion.div
-              className="absolute -bottom-2 -left-2 w-6 h-6 bg-[#013237] rounded-full opacity-60"
-              animate={{ scale: [1, 1.2, 1], opacity: [0.6, 0.8, 0.6] }}
-              transition={{ duration: 3, repeat: Infinity, delay: 1 }}
-            />
+              {/* Back Face */}
+              <motion.div
+                className="absolute w-full h-full flex flex-col items-center justify-center rounded-xl shadow-2xl border-2 border-white/40 bg-gradient-to-br from-[#013237] to-[#4ca771] text-white"
+                style={{ transform: 'rotateY(180deg) translateZ(96px)' }}
+                whileHover={{ scale: 1.05 }}
+              >
+                <FaUserTie className="text-5xl md:text-7xl mb-2" />
+                <span className="text-xs md:text-sm font-semibold opacity-90">CREATIVE</span>
+              </motion.div>
+
+              {/* Right Face */}
+              <motion.div
+                className="absolute w-full h-full flex flex-col items-center justify-center rounded-xl shadow-2xl border-2 border-white/40 bg-gradient-to-br from-[#3a8d5f] to-[#012228] text-white"
+                style={{ transform: 'rotateY(90deg) translateZ(96px)' }}
+                whileHover={{ scale: 1.05 }}
+              >
+                <FaUserTie className="text-5xl md:text-7xl mb-2" />
+                <span className="text-xs md:text-sm font-semibold opacity-90">UI/UX</span>
+              </motion.div>
+
+              {/* Left Face */}
+              <motion.div
+                className="absolute w-full h-full flex flex-col items-center justify-center rounded-xl shadow-2xl border-2 border-white/40 bg-gradient-to-br from-[#5ab57f] to-[#014237] text-white"
+                style={{ transform: 'rotateY(-90deg) translateZ(96px)' }}
+                whileHover={{ scale: 1.05 }}
+              >
+                <FaUserTie className="text-5xl md:text-7xl mb-2" />
+                <span className="text-xs md:text-sm font-semibold opacity-90">INNOVATE</span>
+              </motion.div>
+
+              {/* Top Face */}
+              <motion.div
+                className="absolute w-full h-full flex flex-col items-center justify-center rounded-xl shadow-2xl border-2 border-white/40 bg-gradient-to-br from-[#45a06b] to-[#013237] text-white"
+                style={{ transform: 'rotateX(90deg) translateZ(96px)' }}
+                whileHover={{ scale: 1.05 }}
+              >
+                <FaUserTie className="text-5xl md:text-7xl mb-2" />
+                <span className="text-xs md:text-sm font-semibold opacity-90">SOLVE</span>
+              </motion.div>
+
+              {/* Bottom Face */}
+              <motion.div
+                className="absolute w-full h-full flex flex-col items-center justify-center rounded-xl shadow-2xl border-2 border-white/40 bg-gradient-to-br from-[#2e7a50] to-[#011c1f] text-white"
+                style={{ transform: 'rotateX(-90deg) translateZ(96px)' }}
+                whileHover={{ scale: 1.05 }}
+              >
+                <FaUserTie className="text-5xl md:text-7xl mb-2" />
+                <span className="text-xs md:text-sm font-semibold opacity-90">CREATE</span>
+              </motion.div>
+
+              {/* Inner Glow Effect */}
+              <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-white/10 to-transparent pointer-events-none" />
+            </div>
+
+            {/* Floating Particles around the cube */}
+            {[...Array(8)].map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute w-2 h-2 bg-white/30 rounded-full"
+                animate={{
+                  x: [0, Math.sin(i * 45) * 40, 0],
+                  y: [0, Math.cos(i * 45) * 40, 0],
+                  z: [0, Math.sin(i * 45) * 40, 0],
+                  opacity: [0.3, 0.8, 0.3],
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  delay: i * 0.2,
+                  ease: "easeInOut",
+                }}
+                style={{
+                  transformStyle: "preserve-3d",
+                }}
+              />
+            ))}
           </motion.div>
         </motion.div>
 
-        {/* Text Content */}
+        {/* Text Content (unchanged) */}
         <motion.article
           className="flex-1 text-center md:text-left bg-white/80 backdrop-blur-md p-6 md:p-10 rounded-3xl shadow-xl border-2 border-[#eaf9e7]"
           initial={{ opacity: 0, x: 50 }}
@@ -49,7 +145,7 @@ function Row2() {
             About <span className="text-[#4ca771]">Me</span>
           </h3>
           <p className="text-base md:text-xl text-[#013237] mb-6 font-medium">
-            I am a passionate UI/UX Designer with a keen eye for detail and a
+            I am a passionate UI/UX Designer and Web Developer with a keen eye for detail and a
             drive to create visually appealing and user-friendly designs.
           </p>
           <p className="text-base md:text-xl text-[#013237] mb-8 font-medium">
@@ -61,7 +157,7 @@ function Row2() {
           <div className="flex flex-wrap gap-3 mb-8 justify-center md:justify-start">
             {[
               "UI Design",
-              "UX Research",
+              "Web developing",
               "Prototyping",
               "Wireframing",
               "User Testing",

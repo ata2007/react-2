@@ -193,7 +193,7 @@ function Row6() {
         </motion.div>
       </div>
 
-      <style jsx>{`
+      <style >{`
         @keyframes float1 {
           0%, 100% { transform: translateY(0); }
           50% { transform: translateY(-25px); }

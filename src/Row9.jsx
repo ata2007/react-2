@@ -242,7 +242,7 @@ function Row9() {
         </motion.div>
       </div>
 
-      <style jsx>{`
+      <style >{`
         @keyframes float1 { 0%, 100% { transform: translateY(0) rotate(0deg);} 50% { transform: translateY(-10px) rotate(5deg);} }
         @keyframes float2 { 0%, 100% { transform: translateY(0) rotate(0deg);} 50% { transform: translateY(15px) rotate(-5deg);} }
         @keyframes float3 { 0%, 100% { transform: translateY(0) rotate(0deg);} 50% { transform: translateY(-8px) rotate(3deg);} }
